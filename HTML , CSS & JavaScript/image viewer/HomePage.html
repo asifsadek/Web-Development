@@ -1,0 +1,111 @@
+<html>
+	<head>
+		<script src="jquery-3.3.1.min.js"></script>
+		<title>Image Gallery</title>
+		<link 
+			rel="stylesheet"
+			type="text/css"
+			href="bootstrap.css"
+		/>
+		<link 
+			rel="stylesheet"
+			type="text/css"
+			href="style.css"
+		/>
+	</head>
+	<body>
+		<div class="navBar">
+		<a>
+			Home Page
+		</a>
+		&nbsp;
+			
+		<a>
+			About Page
+		</a>
+
+		&nbsp;
+
+		<a>
+			Contact Page
+		</a>
+		</div>
+		<h1 class="middleText"> 
+		Image Gallery 
+		</h1>
+		<div class="row">
+			<div class="col-md-3">
+				<img
+					id="1"
+					class="crop-img"
+					src="img1.JPG"
+				/>
+			</div>
+			<div class="col-md-3">
+				<img
+					id="2"
+					class="crop-img"
+					src="img2.jpeg"
+				/>
+			</div>
+			<div class="col-md-3">
+				<img
+					id="3"
+					class="crop-img"
+					src="img3.jpeg"
+				/>
+			</div>
+			<div class="col-md-3">
+				<img
+					id="4"
+					class="crop-img"
+					src="img4.JPG"
+				/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-1">
+				<button id="backword">&lt;</button>
+			</div>
+			<div class="col-md-10">
+				<img
+					id="big"
+					class="large-img"
+					src="img1.JPG"
+				/>
+			</div>
+			<div class="col-md-1">
+				<button id="forward">&gt;</button>
+			</div>
+		</div>
+		<script>
+			$(".crop-img").click(function(){
+				$("#big").attr('src', $(this).attr('src'));
+			});
+			var current = 1;
+			var slideshow = false;
+			$("#backword").click(function(){
+				current--;
+				if(current < 1){
+					current = 4;
+				}
+				$("#"+current).click();
+			});	
+			$("#forward").click(function(){
+				current++;
+				if(current > 4){
+					current = 1;
+				}
+				$("#"+current).click();
+			});
+			$("#big").click(function(){
+				slideshow = !slideshow;
+			});
+			setInterval(function(){
+				if(slideshow){
+					$("#forward").click();
+				};
+			}, 1500);
+		</script>
+	</body>
+</html>

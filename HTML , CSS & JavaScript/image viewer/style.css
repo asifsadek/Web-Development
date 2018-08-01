@@ -1,0 +1,31 @@
+.middleText{
+	text-align: center;
+	background: Gainsboro;
+	color: gray;
+}
+
+.navBar{
+	text-align: center;
+	color: Gainsboro;
+	background: gray;
+}
+
+.center{
+	text-align: center;
+}
+
+.crop-img{
+	max-height: 150px;
+	max-width: 100%;
+	margin: 7%;
+}
+
+.large-img{
+		width: 100%;
+		height: auto;
+		margin-left:auto
+}
+
+body{
+	background: silver;
+}

@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<script src="jquery-3.3.1.min.js"></script>
+		<title>Counter</title>
+	</head>
+	<body>
+	<h1 id="count">
+		0
+	</h1>
+	</body>
+	<script>
+		var counter = 0;
+		$("body").click(function(){
+			counter++;
+			$('#count').text(counter);
+		});
+	</script>
+</html>

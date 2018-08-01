@@ -1,0 +1,42 @@
+<html>
+	<head>
+	<title>Contact</title>
+	<link 
+			rel="stylesheet"
+			type="text/css"
+			href="bootstrap.css"
+	/>
+	<script src="jquery-3.3.1.min.js"></script>
+	</head>
+	<body>
+		<a
+		href= "home.HTML">
+			Home Page
+		</a>
+		&nbsp;
+			
+		<a
+		href="about.HTML">
+			About Page
+		</a>
+
+		&nbsp;
+
+		<a
+		href= "Contact.HTML">
+			Contact Page
+		</a>
+		<hr> </hr>
+
+		<h1 id="title" onclick="sayBye();"> HI </h1>
+	</body>
+	<script type="text/javascript">
+		function sayBye(){
+				$("#title").html("BYE");
+				$("#title").click(function (){
+					$("#title").html("HI");
+					$("#title").off("click");
+					});
+				};
+		</script>	
+</html>

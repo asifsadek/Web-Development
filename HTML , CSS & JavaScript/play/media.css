@@ -1,0 +1,10 @@
+@media (min-width: 500px){
+	body{ background: red;}
+	.responsive{
+		display: inline-block;
+		width: 400px;
+	}
+}
+@media (min-width: 1000px){
+	body {background: yellow;}
+}
