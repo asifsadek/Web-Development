@@ -4,7 +4,9 @@
 }
 
 .photo_list{
-    width: 25%;
+    max-height: 200px;
+    width: 100%;
+    padding: 5%;
 }
 
 .single-photo{
