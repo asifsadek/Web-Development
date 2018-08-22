@@ -1,10 +1,25 @@
+
+/** adds a thin solid black border */
 .thin_border{
 	border: 1px solid black;
 }
 
+/** this specific block stays at the top of the screen (like a navbar),
+	its  background color is beige and text is displayed at the center*/
 div.header{
 	position: sticky;
 	top: 0;
 	background-color: beige;
 	text-align: center;
+}
+
+h1 {
+	/* changes text color to gray*/	
+	color: Gray;
+	
+	/*changes font family to sans-serif*/
+	font-family: sans-serif;
+
+	/* adds a this orange border around h1 part */
+	border: 1px solid orange;
 }
