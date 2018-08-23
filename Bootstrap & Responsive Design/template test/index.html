@@ -1,0 +1,138 @@
+<html>
+
+<head>
+
+    <!-- include our libraries and css files -->
+
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/handlebars-v3.0.3.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/gallery.css" rel="stylesheet">
+
+</head>
+
+<body role="document">
+
+    <div class="container">
+        <div class="page-header">
+            <h1>My Photo Album</h1>
+        </div>
+
+        <div class="row-fluid">
+            <ul class="nav nav-tabs">
+                <li role="" id="detailsbtn" class="col-12 col-sm-1"><a href="#">Details</a></li>
+                <li role="" id="modalbtn" class="col-12 col-sm"><a href="#">Big Image</a></li>
+            </ul>
+        </div>
+
+        <br/><br/>
+
+        <div id="content" class="container-fluid" role="main">
+        </div>
+
+    </div>
+
+    <script id="default-content">
+        <div id="def-content">
+            <h4>Where to?</h4>
+        </div>
+    </script>
+
+    <script id="detail-template" type="text/x-handlebars-template">
+        <br>
+        <div class="row-fluid">
+          <div class="col-sm-5">
+            <img  style="width:100%" src="{{src}}"/>
+          </div>
+              <div class="col-sm-7">
+            <h1>{{title}}</h1>
+                <h3 class="author">
+                  {{author}}
+                </h3>
+          </div>
+            
+          </div>
+        </div>
+    </script>
+
+    <script id="modal-template" type="text/x-handlebars-template">
+        <div id="imageModal" class="modal fade" role="dialog">
+          <div class="modal-dialog"  style="width:800">
+  
+            <div class="modal-content">
+              
+              <div class="modal-body">
+                <img  style="width:100%" src="{{src}}"/>
+              </div>
+              
+            </div>
+  
+          </div>
+        </div>
+    </script>
+
+</body>
+
+<script type="text/javascript">
+
+    $('#content').html($('#default-content').html());
+
+    var source = $("#detail-template").html();
+    var detail_template = Handlebars.compile(source);
+
+    source = $("#modal-template").html();
+    var modal_template = Handlebars.compile(source);
+
+    var data = {
+        src: "https://upload.wikimedia.org/wikipedia/commons/archive/9/97/20101017074210%21The_Earth_seen_from_Apollo_17.jpg",
+        title: "The Earth seen from Apollo 17",
+        author: "Ed g2s"
+    };
+
+    var image1Data = {
+        title: "image1",
+        author: "Tuxtso",
+        src: "https://upload.wikimedia.org/wikipedia/commons/archive/9/97/20101017074210%21The_Earth_seen_from_Apollo_17.jpg",
+    };
+
+    console.log(image1Data.author + " " + image1Data.title + " " + image1Data.src);
+
+
+    $("#detailsbtn").click(function () {
+
+        // hide the modal if it is showing
+        $("#imageModal").modal('hide');
+
+        //use the detail template to generate html
+        // and put it in the DOM
+        var html = detail_template(data);
+        $('#content').html(html);
+    });
+
+
+    $("#modalbtn").click(function () {
+
+        //use the modal template to generate html
+        // and put it in the DOM
+        var html = modal_template(data);
+        $('#content').html(html);
+
+        /* we can only show the modal once the 
+           template has been instantiated 
+           because it does not exist before */
+        $("#imageModal").modal('show');
+
+        // create a call back for when the model is 
+        // hidden so we can re-display the detail template
+        $('#imageModal').on('hidden.bs.modal', function () {
+            $('#content').html($('#default-content').html());
+        });
+
+    });
+
+</script>
+
+</html>
