@@ -10,6 +10,7 @@
 <script src="js/bootstrap.min.js"></script>
 
 <link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap_blue.css" rel="stylesheet">
 <link href="css/gallery.css" rel="stylesheet">
 
 </head>
@@ -24,7 +25,8 @@
 
     <!-- this is our template put your code in here...-->
     <script id="todo-template" type="text/x-handlebars-template">
-        <h2>Task: {{title}}</h2>
+        <h2>Task: {{title}}, {{due_by}}</h2>
+        <h3>Assigned to: {{owner}}</h3>
     </script>
 
   <!-- javascript code to fill the template -->
@@ -40,7 +42,7 @@
     var task1 = {
         "title":"Complete the peer assessment",
         "due_by":"1 week from now",
-        "owner":"Put your name here"
+        "owner":"Omar Nassar"
     };
 
     // generate HTML from the data
