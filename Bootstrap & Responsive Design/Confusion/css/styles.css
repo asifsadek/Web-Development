@@ -62,3 +62,9 @@ body{
 .reserve-modal {
     margin: 30px 0;
 }
+
+#carouselButtons{
+    right: 0px;
+    position: absolute;
+    bottom: 0px;
+}
