@@ -2,3 +2,9 @@ body {
   padding: 10px;
   font-family: sans-serif;
 }
+/* CSS declarations go here */
+.thumbnail {
+  min-height:500px;
+  max-height:500px;
+
+}
