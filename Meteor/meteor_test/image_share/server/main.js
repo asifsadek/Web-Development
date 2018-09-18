@@ -8,7 +8,9 @@ Meteor.startup(() => {
       Images.insert(
         {
           img_src: "img_" + i + ".jpg",
-          img_alt: "image number " + i
+          img_alt: "image number " + i,
+          createdOn: new Date(),
+          createdBy: "admin"
         }
       );
     }// end of for insert images

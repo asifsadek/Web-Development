@@ -1,5 +1,6 @@
 body {
   padding: 10px;
+  padding-top: 60px;
   font-family: sans-serif;
 }
 /* CSS declarations go here */
@@ -7,4 +8,8 @@ body {
   min-height:500px;
   max-height:500px;
 
+}
+
+.thumbnail-img {
+  max-height: 300px;
 }
