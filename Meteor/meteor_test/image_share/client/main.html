@@ -50,6 +50,11 @@
   {{#if currentUser}}
   <button class="btn btn-success js-show-image-form">add image</button>
   {{/if}}
+
+  {{#if filtering_images}}
+  <h3>Images by User: {{ filtering_images }}.&nbsp;<a href="#" class="js-remove-filter">show all images</a></h3>
+  {{/if}}
+
   <div class="row">
     {{#each images}}
     <div class="col-xs-12 col-md-3" id="{{_id}}">
