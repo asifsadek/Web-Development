@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
-import { Images } from '../collections/images';
+import { Images } from '../lib/collections';
 
 Meteor.startup(() => {
   if (Images.find().count() == 0) {

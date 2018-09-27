@@ -3,7 +3,7 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import { Mongo } from 'meteor/mongo';
 import { Meteor } from 'meteor/meteor';
 import './main.html';
-import { Images } from '../collections/images';
+import { Images } from '../lib/collections';
 
 
 Session.set("imageLimit", 8);
