@@ -14,3 +14,24 @@ Template.siteList.helpers({
         }
     }
 });
+
+Template.discussSite.helpers({
+
+    'all_comments':function(siteId){
+    
+    // complete the code here so that it reruns
+    
+    // all the comments with a siteId equal to siteId.
+    return Comments.find({ siteId: this._id });
+    
+    },
+    'safer_email':function(email){
+        if (email.indexOf('@')!=-1){// we have an email
+            return email.split('@')[0];
+        }
+        else{// probably anonymouse.
+            return email;
+        }
+    }
+
+    });

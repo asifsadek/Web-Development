@@ -1,3 +1,5 @@
+import { ReactiveVar } from 'meteor/reactive-var';
+
 // event listeners on the addSiteForm template
 Template.addCommentForm.events({
     // this runs when they click the add button... you need to compete it
